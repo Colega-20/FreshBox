@@ -456,7 +456,11 @@
     <!-- Product Detail Panel -->
     <div id="productPanel" class="panel-overlay" onclick="closeProductPanel()">
       <div class="panel" onclick="event.stopPropagation()">
-        <button class="panel-close" onclick="closeProductPanel()">
+        <button
+          style="top: 0.3rem"
+          class="panel-close"
+          id="panel-close"
+          onclick="closeProductPanel()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

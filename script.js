@@ -531,13 +531,16 @@ function toggleCheckout() {
   const panel = document.getElementById("checkoutPanel");
   panel.classList.toggle("active");
   if (panel.classList.contains("active")) {
+    document.querySelector("#panel-close").style.top = "0px";
     renderCheckout();
   }
+  document.querySelector("#panel-close").style.top = "0px";
 }
 
 // Close checkout
 function closeCheckout() {
   document.getElementById("checkoutPanel").classList.remove("active");
+  document.querySelector(".panel-close").style.top = "0.3rem";
 }
 
 // Render checkout
