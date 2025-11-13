@@ -372,7 +372,7 @@ function openProductPanel(productId) {
         ${
           selectedProduct.isPopular
             ? `
-            <div class="popular-badge" style="position: absolute;  height: 5%; top: 1rem; left: 1rem;">
+            <div class="popular-badge" style="position: absolute;  height: 5%; top: 0.1rem; left: 1rem;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
                 </svg>
