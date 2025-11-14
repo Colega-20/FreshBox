@@ -309,6 +309,7 @@ function filterMenu(category) {
 // Render menu
 function renderMenu() {
   const menuGrid = document.getElementById("menuGrid");
+
   const filteredItems =
     selectedCategory === "All"
       ? menuItems
@@ -361,7 +362,7 @@ function renderMenu() {
 function openProductPanel(productId) {
   selectedProduct = menuItems.find((item) => item.id === productId);
   productQuantity = 1;
-
+  document.body.classList.add("no-scroll"); // Remover la clase para reactivar el desplazamiento
   const panel = document.getElementById("productPanel");
   const content = document.getElementById("productPanelContent");
 
@@ -372,7 +373,7 @@ function openProductPanel(productId) {
         ${
           selectedProduct.isPopular
             ? `
-            <div class="popular-badge" style="position: absolute;  height: 5%; top: 0.1rem; left: 1rem;">
+            <div class="popular-badge" style="width: 20%;  height: auto;  left: 1rem;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
                 </svg>
@@ -464,6 +465,7 @@ function openProductPanel(productId) {
 // Close product panel
 function closeProductPanel() {
   document.getElementById("productPanel").classList.remove("active");
+  document.body.classList.remove("no-scroll"); // Remover la clase para reactivar el desplazamiento
   selectedProduct = null;
 }
 
@@ -530,6 +532,7 @@ function updateCartBadge() {
 function toggleCheckout() {
   const panel = document.getElementById("checkoutPanel");
   panel.classList.toggle("active");
+  document.body.classList.add("no-scroll"); // Remover la clase para reactivar el desplazamiento
   if (panel.classList.contains("active")) {
     document.querySelector("#panel-close").style.top = "0px";
     renderCheckout();
@@ -540,7 +543,8 @@ function toggleCheckout() {
 // Close checkout
 function closeCheckout() {
   document.getElementById("checkoutPanel").classList.remove("active");
-  document.querySelector(".panel-close").style.top = "0.3rem";
+  document.querySelector(".panel-close").style.top = "0.5rem";
+  document.body.classList.remove("no-scroll"); // Remover la clase para reactivar el desplazamiento
 }
 
 // Render checkout

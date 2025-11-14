@@ -1,5 +1,7 @@
 /** @format */
-
+body.no-scroll {
+  overflow: hidden;
+}
 :root {
   --background: hsl(42, 35%, 97%);
   --foreground: hsl(30, 25%, 15%);
@@ -689,7 +691,7 @@ h6 {
 
 .panel-close {
   position: absolute;
-
+  display: flex;
   right: 1rem;
   background-color: rgb(0 0 0 / 16%);
   border: none;
